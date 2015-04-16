@@ -1,10 +1,11 @@
 'use strict';
 
-module.exports = once;
+module.exports = once
 
 function once (fn) {
   var called = false
   var value
+
   return function f () {
     if (called) {
       return value

@@ -20,10 +20,13 @@
     "url": "https://github.com/joaquimserafim/simple-once.git"
   },
   "keywords": [
-    "regexes",
-    "regex",
-    "compare",
-    "equal"
+    "once",
+    "one",
+    "time",
+    "run",
+    "single",
+    "function",
+    "callback"
   ],
   "author": "@joaquimserafim",
   "license": "ISC",

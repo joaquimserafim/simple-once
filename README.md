@@ -9,14 +9,28 @@ the simple way to call a function once
 ## API
 `var once = require('simple-once')`
 
-**once(*RegExp Object*, *RegExp Object*)**
+**once(*function*)**
 
 ## Usage
 
 ```js
 var once = require('simple-once')
+var fs = require('fs')
 
+var file = fs.createReadStream('file.txt')
 
+function log () {
+  console.log.apply(this, arguments)
+}
+
+var cb = once(log)
+
+// cb will be called only once
+
+file.on('data', cb)
+file.on('end', cb)
+file.on('close', cb)
+file.on('error', cb)
 ```
 
 
