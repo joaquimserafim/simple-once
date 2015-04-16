@@ -1,6 +1,6 @@
 # simple-once
 
-the simple way to call a function once
+the simplest way to call a function once
 
 <a href="https://nodei.co/npm/compare-regexes/"><img src="https://nodei.co/npm/simple-once.png?downloads=true"></a>
 

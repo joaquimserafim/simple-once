@@ -1,7 +1,7 @@
 {
   "name": "simple-once",
-  "version": "0.0.0",
-  "description": "the simple way to call a function once",
+  "version": "1.0.0",
+  "description": "the simplest way to call a function once",
   "main": "index.js",
   "files": [
     "LICENSE",
