@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 module.exports = once
 
@@ -6,7 +6,7 @@ function once (fn) {
   var called = false
   var value
 
-  return function f () {
+  return function() {
     if (called) {
       return value
     } else {
