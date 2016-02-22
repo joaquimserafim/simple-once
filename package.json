@@ -50,6 +50,7 @@
     "lint",
     "style",
     "test",
+    "complexity",
     "coverage:check"
   ]
 }
