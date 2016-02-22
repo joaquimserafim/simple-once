@@ -10,5 +10,6 @@
   "onecase": true,
   "indent": 2,
   "sub": true,
-  "asi": "true"
+  "asi": "true",
+  "esversion": 6
 }

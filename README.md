@@ -33,6 +33,62 @@ file.on('close', cb)
 file.on('error', cb)
 ```
 
+**loading a function once**
+
+```js
+var once = require('simple-once')
+
+// file foo.js
+var counter = 0
+
+module.exports = foo
+
+function foo (cb) {
+  counter++
+  cb(null, counter)
+}
+
+// file bar.js
+
+var foo = require('./foo')
+
+foo(function (error, result) {
+  console.info(result) // should print 1
+})
+
+// file barr.js
+
+var foo = require('./foo')
+
+foo(function (error, result) {
+  console.info(result) // should print 1
+})
+
+```
+
+with arguments
+
+```js
+var once = require('simple-once')
+
+// file foo.js
+
+module.exports = foo
+
+function foo (message, cb) {
+  cb(null, message.toUpperCase() + '!')
+}
+
+// file bar.js
+
+var foo = require('./foo')
+
+foo('hello world', function (error, result) {
+  console.info(result) // should print HELLO WORLD!
+})
+
+```
+
 
 ## Development
 
