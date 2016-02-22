@@ -22,7 +22,7 @@ function once (fn) {
       return value = fn.apply(this, arguments)
     }
 
-    arguments[arguments.length - 1] = function (err, res) {
+    arguments[arguments.length - 1] = function runCb (err, res) {
       value = res
       cb(err, res)
     }
