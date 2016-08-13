@@ -7,7 +7,7 @@ var once = require('./')
 test('one crazy test', function(assert) {
   var cattivo = 0
 
-  function buono (i) {
+  function buono(i) {
     assert.deepEqual(cattivo, 0)
     return (++cattivo) + i
   }
@@ -27,7 +27,7 @@ test('one crazy test', function(assert) {
 test('should load a function once', function(assert) {
   var value = 0
 
-  function fn (cb) {
+  function fn(cb) {
     value++
     cb(null, value)
   }
@@ -46,16 +46,18 @@ test('should load a function once', function(assert) {
 
 test('should load a function once and pass some arguments', function(assert) {
 
-  function fn (val1, val2, cb) {
+  function fn(val1, val2, cb) {
     cb(null, val1 + ' ' + val2)
   }
 
   var testFn = once(fn)
 
   testFn('hello', 'world', function(err, val) {
+    assert.deepEqual(err, null)
     assert.deepEqual(val, 'hello world')
 
-    testFn(function(err, val) {
+    testFn('world', 'hello', function(err, val) {
+      assert.deepEqual(err, null)
       assert.deepEqual(val, 'hello world')
       assert.end()
     })
