@@ -9,7 +9,7 @@ the simplest way to call a function once
 ## API
 `var once = require('simple-once')`
 
-**once(*function*)**
+**once(*function([args])*)**
 
 ## Usage
 
@@ -41,7 +41,7 @@ var once = require('simple-once')
 // file foo.js
 var counter = 0
 
-module.exports = foo
+module.exports = once(foo)
 
 function foo (cb) {
   counter++
