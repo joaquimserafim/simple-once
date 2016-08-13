@@ -73,7 +73,7 @@ var once = require('simple-once')
 
 // file foo.js
 
-module.exports = foo
+module.exports = once(foo)
 
 function foo (message, cb) {
   cb(null, message.toUpperCase() + '!')
@@ -102,20 +102,20 @@ npm test
 
 to run jshint
 ``` js
-npm run jshint
+npm run lint
 ```
 
 to run code style
 ``` js
-npm run code-style
+npm run style
 ```
 
 to run check code coverage
 ``` js
-npm run check-coverage
+npm run coverage:check
 ```
 
 to open the code coverage report
 ``` js
-npm run open-coverage
+npm run coverage:open
 ```

@@ -2,11 +2,11 @@
 
 module.exports = once
 
-function once (fn) {
+function once(fn) {
   var called = false
   var value
 
-  return function onceFn () {
+  return function onceFn() {
     var cb = arguments[arguments.length - 1]
     var isFn = typeof cb === 'function';
 
@@ -22,11 +22,13 @@ function once (fn) {
       return value = fn.apply(this, arguments)
     }
 
-    arguments[arguments.length - 1] = function runCb (err, res) {
+    arguments[arguments.length - 1] = runCb
+
+    fn.apply(null, arguments)
+
+    function runCb(err, res) {
       value = res
       cb(err, res)
     }
-
-    fn.apply(null, arguments)
   }
 }
